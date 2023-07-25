@@ -29,7 +29,7 @@ class UsersController extends Controller
         $data = $request->all();
         //如果存在图片上传
         if ($request->avatar) {
-            $result = $uploader->save($request->avatar, 'avatars', $user->id);
+            $result = $uploader->save($request->avatar, 'avatars', $user->id,416);
             if ($result) {
                 $data['avatar'] = $result['path'];
             }
