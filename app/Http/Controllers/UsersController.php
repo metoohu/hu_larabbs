@@ -26,7 +26,7 @@ class UsersController extends Controller
 
     public function update(UserRequest $request,ImageUploadHandler $uploader,User $user)
     {
-        $user->update($request->all());
+        $data = $request->all();
         //如果存在图片上传
         if ($request->avatar) {
             $result = $uploader->save($request->avatar, 'avatars', $user->id);
@@ -34,6 +34,7 @@ class UsersController extends Controller
                 $data['avatar'] = $result['path'];
             }
         }
+        $user->update($data);
         return redirect()->route('users.show',$user->id)->with('success','个人资料更新成功!');
     }
 }
