@@ -14,12 +14,14 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use Traits\ActiveUserHelper;
     use HasRoles;
     use HasApiTokens, HasFactory,MustVerifyEmailTrait;
 
     use Notifiable {
         notify as protected laravelNotify;
     }
+
     /**
      * The attributes that are mass assignable.
      *
