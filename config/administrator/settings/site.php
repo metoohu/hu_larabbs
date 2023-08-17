@@ -30,16 +30,22 @@ return [
             'type' => 'text',
             'limit' => 50,
         ],
+        'filing_number' => [
+            'title' => '备案号',
+            'type' => 'text',
+            'limit' => 50,
+        ],
+        'query_address' => [
+            'title' => 'ICP备案查询地址',
+            'type' => 'text',
+            'limit' => 50,
+        ],
         'seo_description' => [
             'title' => 'SEO - Description',
             'type' => 'textarea',
             'limit' => 250,
         ],
-        'seo_keyword' => [
-            'title' => 'SEO - Keywords',
-            'type' => 'textarea',
-            'limit' => 250,
-        ],
+
     ],
 
     // 表单验证规则
